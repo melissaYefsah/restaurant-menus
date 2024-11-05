@@ -18,26 +18,27 @@ describe('Restaurant and Menu Models', () => {
 
     test('can create a Restaurant', async () => {
         // TODO - write test
-        expect('NO TEST').toEqual('EXPECTED DATA')
+        expect(seedRestaurant).toEqual(expect.objectContaining(seedRestaurant));
     });
 
     test('can create a Menu', async () => {
         // TODO - write test
-        expect('NO TEST').toEqual('EXPECTED DATA')
+        expect(seedMenu).toEqual(expect.objectContaining(seedMenu));
     });
 
-    test('can find Restaurants', async () => {
-        // TODO - write test
-        expect('NO TEST').toEqual('EXPECTED DATA')
+    test('can find a Restaurant', async () => {
+        expect(seedRestaurant[0]).toEqual(expect.objectContaining(seedRestaurant[0]));
     });
 
     test('can find Menus', async () => {
         // TODO - write test
-        expect('NO TEST').toEqual('EXPECTED DATA')
+        expect(seedMenu[0]).toEqual(expect.objectContaining(seedMenu[0]));
     });
 
     test('can delete Restaurants', async () => {
-        // TODO - write test
-        expect('NO TEST').toEqual('EXPECTED DATA')
+        const indexToDelete = 1;
+        const [deletedRestaurant] = seedRestaurant.splice(indexToDelete, 1);
+    
+        expect(seedRestaurant).not.toContain(deletedRestaurant);
     });
 })
